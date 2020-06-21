@@ -223,7 +223,6 @@ class Diary {
 
     public function results() {
         $title = "Search Results";
-        $heading = $title;
         $searchBox = $this->tableSearchBox->generalSearchBox();
         
         if(isset($_GET['pageno']) && $_GET['pageno'] > 1) {
@@ -246,7 +245,7 @@ class Diary {
                 }
             }
             
-
+            $heading = "Search Results";
             
             $resultsperpage = 5;
             $limit['offset'] = ($pageno-1)*$resultsperpage;
@@ -267,6 +266,7 @@ class Diary {
             $totalSearchResults = 0;
             $resultsperpage =0;
             $pageNext = $pagePrevious = false;
+            $heading = "Search Appointments";
         }
         //results array would in theory be the results of query of searchbox.
         

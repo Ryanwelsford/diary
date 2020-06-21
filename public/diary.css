@@ -4,9 +4,12 @@
     /* border collapse makes each td th table have the same border */
     border-collapse: collapse;
     /*background-color: aquamarine;*/
-    width: 70vw;
     text-decoration: none;
+    margin: 0vh 2vw 0vh 2vw;
     
+}
+.diary h3, .large-table, .heading-course {
+    width: 70vw;
 }
 .large-table,.large-table tr,.large-table th,.large-table td {
     border: 1px solid grey;
@@ -56,12 +59,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;    
-    width: 70vw;
+    width: 74vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: #f6f5f4;
+    background-color: #e1e1e1;
     border: 1px solid black;
-    padding: 0.2em 2em 0.5em 2em;
+    padding: 0.2em 3em 0.5em 3em;
 }
 /*general appointment styling*/
 .diary-appointment, .diary-meeting, .diary-personal-tutorial, .diary-event {
@@ -122,9 +125,7 @@ section .diary-delete {
 .diary-table .diary-today, .timetable-table tr .timetable-current {
     background-color: rgb(184, 12, 184);
 }
-.diary h3 {
-    width:inherit;
-}
+
 .diary .diary-title {
     display: flex;
     flex-direction: row;
@@ -139,18 +140,19 @@ section .diary-delete {
 .diary-right button, .diary-left button {
     font-size: 2.5vh;
     transition-duration: 0.4s;
+    padding: 5px;
+    border:black thick 1px;
 }
 .diary-right button:hover, .diary-left button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .formContainer {
-    margin-top: 5em;
     display: flex;
     flex-direction: column;
     align-items: center;    
     text-align: flex-start;
-    background-color: #f6f5f4;
+    background-color: #e1e1e1;
     border: 1px solid black;
     padding: 2em;
     width: 40vw;
@@ -231,7 +233,6 @@ section .diary-delete {
 }
 
 .heading-course {
-    width:inherit;
     border: 1px solid grey;
     border-bottom: none;
     background-color: rgb(210, 235, 243);
@@ -293,13 +294,14 @@ section .diary-delete {
 .search-results-table th, .search-results-table td {
     padding: 10px;
 }
+.search-results-table tr:nth-child(n) {
+    background-color: rgb(190, 190, 190);
+}
 .search-results-table tr:nth-child(2n) {
     background-color: rgb(228, 227, 227);
 }
-/*
-.search-results-table tr:nth-child() {
-    background-color: rgb(255, 255, 255);
-}*/
+
+
 .search-buttons-links {
     display: flex;
     flex-direction: row;
@@ -331,4 +333,13 @@ section .diary-delete {
     margin-top: 1em;
     display: flex;
     flex-direction: row;
+}
+
+.navbar {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0px;
+    font-size: 2.2vw;
+}
 }
