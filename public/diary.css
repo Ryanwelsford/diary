@@ -5,11 +5,10 @@
     border-collapse: collapse;
     /*background-color: aquamarine;*/
     text-decoration: none;
-    margin: 0vh 2vw 0vh 2vw;
-    
 }
 .diary h3, .large-table, .heading-course {
     width: 70vw;
+    margin: 0vh 2vw 0vh 2vw;
 }
 .large-table,.large-table tr,.large-table th,.large-table td {
     border: 1px solid grey;
@@ -64,7 +63,7 @@
     margin-right: auto;
     background-color: #e1e1e1;
     border: 1px solid black;
-    padding: 0.2em 3em 0.5em 3em;
+    padding: 1em 3em 1em 3em;
 }
 /*general appointment styling*/
 .diary-appointment, .diary-meeting, .diary-personal-tutorial, .diary-event {
@@ -242,20 +241,19 @@ section .diary-delete {
 }
 /*tab styling*/
 .tab-container {
-    border: 1px solid grey;
-    border-bottom: none;
     border-right: none;
-    background-color: rgb(210, 235, 243);
     box-sizing:border-box;
-    margin-left: auto;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    width: 70vw;
+    margin: 0px;
 }
 .timetable-tab {
     font-size: 2.5vh;
     width: 15vw;
-    border: none;
-    border-right: 1px solid grey;
+    border: 1px solid grey;
+    border-bottom: none;
     background-color: rgb(210, 235, 243);
     padding: 5px;
     display: flex;
@@ -342,4 +340,4 @@ section .diary-delete {
     top: 0px;
     font-size: 2.2vw;
 }
-}
+

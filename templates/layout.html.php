@@ -101,7 +101,7 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link hvr-sweep-to-left" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timetable</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item hvr-grow-shadow" href="#">Create</a>
+                        <a class="dropdown-item hvr-grow-shadow" href="/timetable/create">Create</a>
                         <a class="dropdown-item hvr-grow-shadow" href="#">Amend</a>
                         <a class="dropdown-item hvr-grow-shadow" href="#">Delete</a>
                         <a class="dropdown-item hvr-grow-shadow" href="#">Archive</a>
@@ -114,8 +114,8 @@
                         <a class="dropdown-item hvr-grow-shadow" href="/diary/create">Create</a>
                         <a class="dropdown-item hvr-grow-shadow" href="/diary/results">Amend</a>
                         <a class="dropdown-item hvr-grow-shadow" href="/diary/results">Delete</a>
-                        <a class="dropdown-item hvr-grow-shadow" href="#">Archive</a>
                         <a class="dropdown-item hvr-grow-shadow" href="/diary/view">Display</a>
+                        <a class="dropdown-item hvr-grow-shadow" href="/diary/results">Search</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

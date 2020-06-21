@@ -20,7 +20,7 @@
 <article class = "table-container">
     <h2>Create Timetable</h2>
     <div class="tab-container">
-        <button id="defaultOpen" class="tablinks active-tab timetable-tab" onclick="openTab(event, 'timetable-view')" >View</button>
+        <button id="defaultOpen" class="tablinks active-tab timetable-tab " onclick="openTab(event, 'timetable-view')" >View</button>
         <button <?=$errorButtonStatus;?> class="tablinks timetable-tab" onclick="openTab(event, 'timetable-errors')">Errors<section class = "error"><?=$errorSize;?></section></button>
     </div>
 
@@ -41,9 +41,10 @@
     </div>
 
     <div id="timetable-view" class="timetable-tabcontent">
-    <div class = "heading-course">Course: <?=$course['title'];?></div>
+    
     <form method = "POST" action="/timetable/view">
         <table class= 'timetable-table large-table'>
+            <tr><div class = "heading-course">Course: <?=$course['title'];?></div></tr>
             <tr>
                 <th>Day</th>
                 <th>9-10</th>

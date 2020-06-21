@@ -1,8 +1,8 @@
 <article class = "table-container">
 
         <h3>View Timetable</h3>
-        <div class = "heading-course">Course: <?=$course['title'];?></div>
         <table class= 'timetable-table large-table'>
+        <tr><div class = "heading-course">Course: <?=$course['title'];?></div></tr>
         <tr>
             <th>Day</th>
             <th>9-10</th>
@@ -37,10 +37,10 @@
                                 ?>
                                 <td class= "timetable-module">
                                     <div>
-                                        <div><?=$timetable[$day][$timeslot]['module'];?></div>
+                                        <div><?=$timetable[$day][$timeslot]['module'] ?? 'Module Not Set'?></div>
                                         <div><?=$moduleType;?></div>
                                         <div>Group 1</div>
-                                        <div><?=$timetable[$day][$timeslot]['room'];?></div>
+                                        <div><?=$timetable[$day][$timeslot]['room'] ?? 'Room Not Set'?></div>
                                     </div>
                                 
 
