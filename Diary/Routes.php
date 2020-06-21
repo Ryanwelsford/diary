@@ -1,11 +1,11 @@
 <?php
 namespace Diary;
-class Routes implements \CSY2028\Routes {
+class Routes implements \RWCSY2028\Routes {
     public function getRoutes() {
         require '../dbconnect.php';
 
-        $appointmentsTable = new \CSY2028\DatabaseTable($pdo, 'appointment', 'id');
-        $diariesTable = new \CSY2028\DatabaseTable($pdo, 'diary', 'id');
+        $appointmentsTable = new \RWCSY2028\DatabaseTable($pdo, 'appointment', 'id');
+        $diariesTable = new \RWCSY2028\DatabaseTable($pdo, 'diary', 'id');
         
         $timetableController = new \Diary\Controllers\Timetable();
         $diaryController = new \Diary\Controllers\Diary($diariesTable, $appointmentsTable, $_GET, $_POST, $_SESSION);

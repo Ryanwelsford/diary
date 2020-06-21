@@ -15,7 +15,7 @@ class Diary {
         $this->get = $get;
         $this->post = $post;
         $this->session = $session;
-        $this->tableSearchBox = $TableSearchBox = new \CSY2028\TableSearchBox($this->appointmentsTable,['diary_id']);
+        $this->tableSearchBox = $TableSearchBox = new \RWCSY2028\TableSearchBox($this->appointmentsTable,['diary_id']);
     }
 
     public function view() {

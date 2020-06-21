@@ -1,5 +1,5 @@
 <?php
-namespace CSY2028;
+namespace RWCSY2028;
 //interface class for use with entry point class
 interface Routes {
 	//return routes array
