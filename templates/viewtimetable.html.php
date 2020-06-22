@@ -2,7 +2,7 @@
 
         <h3>View Timetable</h3>
         <table class= 'timetable-table large-table'>
-        <tr><div class = "heading-course">Course: <?=$course['title'];?></div></tr>
+        <tr><div class = "heading-course">Course: <?=$course->name;?> - Year <?=$course->year;?> - Timetable <?=$t_id ?? ''?></div></tr>
         <tr>
             <th>Day</th>
             <th>9-10</th>
@@ -30,16 +30,18 @@
                                 if(!in_array($timetable[$day][$timeslot]['module'], $moduleArray)) {
                                     $moduleArray[] = $timetable[$day][$timeslot]['module'];
                                     $moduleType = "Lecture";
+                                    $timetablepractical = '';
                                 }
                                 else {
                                     $moduleType = "Practical";
+                                    $timetablepractical = 'timetable-practical';
                                 }
                                 ?>
-                                <td class= "timetable-module">
+                                <td class= "timetable-module <?=$timetablepractical;?>">
                                     <div>
                                         <div><?=$timetable[$day][$timeslot]['module'] ?? 'Module Not Set'?></div>
                                         <div><?=$moduleType;?></div>
-                                        <div>Group 1</div>
+                                        <div>Timetable <?=$t_id ?? ''?></div>
                                         <div><?=$timetable[$day][$timeslot]['room'] ?? 'Room Not Set'?></div>
                                     </div>
                                 

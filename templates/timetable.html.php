@@ -42,9 +42,9 @@
 
     <div id="timetable-view" class="timetable-tabcontent">
     
-    <form method = "POST" action="/timetable/view">
+    <form method = "POST" action="/timetable/create">
         <table class= 'timetable-table large-table'>
-            <tr><div class = "heading-course">Course: <?=$course['title'];?></div></tr>
+            <tr><div class = "heading-course">Course: <?=$course->name;?> - Year <?=$course->year;?></div></tr>
             <tr>
                 <th>Day</th>
                 <th>9-10</th>
@@ -119,6 +119,8 @@
         </table>
         
         <div class="submit-hold"><input class="table-submit" type="submit" name="Submit"></div>
+        <input type = "hidden" name="course[id]" value="<?=$course->id;?>">
+        <input type = "hidden" name="t_id" value="<?=$t_id ?? '';?>">
     </form>
     </div>
 </article>

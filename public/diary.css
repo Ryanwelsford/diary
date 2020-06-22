@@ -213,6 +213,9 @@ section .diary-delete {
     margin: 0.4em;
     background-color: rgb(204, 192, 27);
 }
+.timetable-table .timetable-practical {
+    background-color: rgb(121, 204, 27);
+}
 .timetable-table td:nth-of-type(1) {
     font-weight: 1000;
     height: 8vh;

@@ -126,6 +126,20 @@ class DatabaseTable {
 		$stmt->execute($criteria);
 	}
 
+	public function deleteWhere($field, $value, $limit = false) {
+		$limitstring = '';
+		if($limit != false) {
+			$limitstring = ' LIMIT '.$limit; 
+		}
+		$stmtstring = 'DELETE FROM '.$this->table.' WHERE '.$field. ' = :value'.$limitstring;
+
+		$stmt = $this->pdo->prepare($stmtstring);
+		$values = [
+			':value' => $value
+		];
+		$stmt->execute($values);
+	}
+
 	public function desc() {
 		$stmt = $this->pdo->prepare('SHOW COLUMNS FROM '.$this->table);
 		$stmt->execute();
@@ -230,6 +244,12 @@ class DatabaseTable {
 		//var_dump($stmt);
         $results = $stmt->fetchAll();
         return $results;
+	}
+	public function findLatestRecord($field = 'id') {
+		$stmt = $this->pdo->prepare('SELECT * FROM '.$this->table.' WHERE '.$field.' = (SELECT max('.$field.') FROM '.$this->table.')');
+		$stmt->execute();
+		$result = $stmt->fetch();
+		return $result;
 	}
 	
 	public function findBetweenOrdered($field, $value1, $value2, $order) {

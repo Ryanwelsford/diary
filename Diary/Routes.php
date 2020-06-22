@@ -3,11 +3,16 @@ namespace Diary;
 class Routes implements \RWCSY2028\Routes {
     public function getRoutes() {
         require '../dbconnect.php';
-
+        //diary tables
         $appointmentsTable = new \RWCSY2028\DatabaseTable($pdo, 'appointment', 'id');
         $diariesTable = new \RWCSY2028\DatabaseTable($pdo, 'diary', 'id');
-        
-        $timetableController = new \Diary\Controllers\Timetable();
+        //timetable tables
+        $roomsTable = new \RWCSY2028\DatabaseTable($pdo, 'rooms', 'id');
+        $timetableTable = new \RWCSY2028\DatabaseTable($pdo, 'timetable', 'id');
+        $timetable_slotsTable = new \RWCSY2028\DatabaseTable($pdo, 'timetable_slots', 'id');
+        $tempCourseTable = new \RWCSY2028\DatabaseTable($pdo, 'temp_course', 'id');
+
+        $timetableController = new \Diary\Controllers\Timetable($timetableTable, $timetable_slotsTable, $tempCourseTable, $roomsTable);
         $diaryController = new \Diary\Controllers\Diary($diariesTable, $appointmentsTable, $_GET, $_POST, $_SESSION);
         $routes = [
             'diary/view' => [
@@ -58,6 +63,22 @@ class Routes implements \RWCSY2028\Routes {
                     'function' => 'view'
                 ]
             ],
+            'timetable/select' => [
+                'GET' => [
+                    'controller' => $timetableController,
+                    'function' => 'selectCourse'
+                ],
+                'POST' => [
+                    'controller' => $timetableController,
+                    'function' => 'selectCourse'
+                ]
+            ],
+            'timetable/selectionSearch' => [
+                'GET' => [
+                    'controller' => $timetableController,
+                    'function' => 'selectionSearch'
+                ]
+            ],
             '' => [
                 'GET' => [
                     'controller' =>$diaryController,
@@ -68,6 +89,7 @@ class Routes implements \RWCSY2028\Routes {
         ];
         return $routes;
     }
+    
 
     public function getReroute() {
             $route = '';
