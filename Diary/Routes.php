@@ -104,6 +104,12 @@ class Routes implements \RWCSY2028\Routes {
     }
 
     public function checkLogin($userPrivileges = '') {
-    
+        /*session_start();
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            return true;
+        }
+        else {
+            header('location: /login')
+        }*/
     }
 }
